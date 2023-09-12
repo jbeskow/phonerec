@@ -1,0 +1,6 @@
+webrtcvad
+torch
+transformers
+matplotlib
+scipy
+numpy
