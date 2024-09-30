@@ -2,5 +2,5 @@ webrtcvad
 torch
 transformers
 matplotlib
-scipy
+librosa
 numpy
