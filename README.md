@@ -19,12 +19,14 @@ phonerec = PhoneRecognizer()
 # from filename
 res = phonerec.recognize(file='test.wav')
 
-# output: 
-# res = [[0.0, 0.34, 'sil'], [0.34, 0.36, 'h'], [0.36, 0.48, 'iː'], [0.48, 0.5, 'w'], [0.5, 0.58, 'ʌ'], [0.58, 0.6, 'z'] ... ]
-
 # from numpy vector
 import scipy.io.wavfile as wav
 fs,x = wav.read('test.wav')
-phonerec.recognize(x,fs)   # <-- NOTE: argument order follows librosa convention
+res = phonerec.recognize(x,fs)   # <-- NOTE: argument order follows librosa convention
+
+
+# output will be start,end,phone in a list of lists, e.g: 
+# [[0.0, 0.34, 'sil'], [0.34, 0.36, 'h'], [0.36, 0.48, 'iː'], [0.48, 0.5, 'w'], [0.5, 0.58, 'ʌ'], [0.58, 0.6, 'z'] ... ]
+
 ```
 
